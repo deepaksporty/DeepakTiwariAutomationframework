@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="3" name="TestAutomastionSuite" parallel="classes">
+  <listeners>
+    <listener class-name="frameworkcore.ReportingClass.ListenersImpl"/>
+  </listeners>
+  <test thread-count="3" name="Test1" parallel="classes">
+    <parameter name="BrowserName" value="Chrome"/>
+    <parameter name="platformtype" value="Linux"/>
+    <parameter name="IncognitoMode" value="True"/>
+    <parameter name="LogLevel" value="DEBUG"/>
+    <classes>
+      <class name="frameworkcore.projectA.moduleA.featureA.FeatureATest">
+        <methods>
+          <include name="testfeatureA1"/>
+        </methods>
+      </class> <!-- frameworkcore.projectA.moduleA.featureA.FeatureATest -->
+    </classes>
+  </test> <!-- Test1 -->
+  <test thread-count="3" name="Test6" parallel="classes">
+    <parameter name="BrowserName" value="Android"/>
+    <parameter name="Port" value="4723"/>
+    <parameter name="platformtype" value="Windows"/>
+    <parameter name="deviceName" value="192.168.28.101"/>
+    <parameter name="bootstrapport" value="4724"/>
+    <classes>
+      <class name="com.cucumber.Test.TestRunner"/>
+    </classes>
+  </test> <!-- Test6 -->
+  <test thread-count="3" name="Test2" parallel="classes">
+    <parameter name="BrowserName" value="Firefox"/>
+    <parameter name="IncognitoMode" value="True"/>
+    <classes>
+      <class name="frameworkcore.projectA.moduleA.featureA.FeatureBTest">
+        <methods>
+          <include name="testfeatureB1"/>
+        </methods>
+      </class> <!-- frameworkcore.projectA.moduleA.featureA.FeatureBTest -->
+    </classes>
+  </test> <!-- Test2 -->
+</suite> <!-- TestAutomastionSuite -->
